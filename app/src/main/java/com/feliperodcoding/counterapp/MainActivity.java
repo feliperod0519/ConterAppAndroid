@@ -16,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
     TextView welcome_text, counter_text;
     Button btn;
 
+    int counter = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                counter_text.setText(""+ increaseCounter());
             }
         });
 
@@ -38,6 +40,10 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+    }
+
+    public int increaseCounter(){
+        return ++counter;
     }
 
 
